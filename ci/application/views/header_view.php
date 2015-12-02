@@ -6,4 +6,5 @@
  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/css/main.css" />
 </head>
 <body>
- <div id="wrapper">
+	<div id="content">
+ 

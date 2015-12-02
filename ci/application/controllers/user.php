@@ -7,6 +7,7 @@ class User extends CI_Controller{
   $this->load->model('user_model');
  }
 
+//MAIN PAGE -- if the user is logged in - checked by username/email - then they will see the dashboard, otherwise, user will see the landing page
 
  public function index()
  {
@@ -22,6 +23,7 @@ class User extends CI_Controller{
   }
  }
 
+//DASHBOARD CONTROLLER -- When user is logged in, they will see the dashboard
 
  public function dashboard()
  {
@@ -31,6 +33,7 @@ class User extends CI_Controller{
   $this->load->view('footer_view',$data);
  }
 
+//LOGIN CONTROLLER -- draws information from form, checks USER table from DB to confirm
 
  public function login()
  {
@@ -82,7 +85,7 @@ class User extends CI_Controller{
   'logged_in' => FALSE,
   );
 
-  $this->session->unset_userdata($newdata );
+  $this->session->unset_userdata($newdata);
   $this->session->sess_destroy();
   $this->index();
  }
