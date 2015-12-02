@@ -1,0 +1,121 @@
+/* MAIN STYLING */
+
+body {
+ font-family: 'Abel', Arial, sans-serif;
+ font-size: 14px;
+ font-color: #333;
+}
+
+.menu-bar {
+	width: 100%;
+	background-color: rgba(247,148,30,0.8);
+}
+
+#footer {
+	width: 100%;
+	background-color: rgba(247,148,30,0.5);
+}
+
+/* CONTENT BOXES */
+
+#content {
+	width: 95%;
+	margin: 0 auto;
+}
+
+#topheader {
+	width: 50%;
+	margin-top: 10px;
+}
+
+#reg_form{
+	margin: 0 auto;
+	width: 50%;
+}
+
+/* LINKS */
+a:link, a:visited {
+	color: #a01f0e;
+}
+
+a:hover {
+	color: #f7941e;
+}
+
+/* HEADER */
+h1 {
+	font-family: 'Rubik', Arial, sans-serif;
+	color: #a01f0e;
+	font-weight: 900;
+}
+
+/* DISPLAY */
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.logo img{
+	width: 25%;
+	max-width: 25%;
+	
+}
+
+/* FORM */
+
+input{
+	font-family: Abel;
+	border: 1px solid #f7941e;
+	border-radius: 25px;
+	margin: 2px;
+	padding: 10px;
+	width: 45%;
+}
+
+.top-login{
+	font-family: Abel;
+	border: 1px solid #f7941e;
+	border-radius: 25px;
+	margin: 2px;
+	padding: 5px;
+	width: 25%;
+	background-color: #fff;
+	text-transform: uppercase;
+}
+
+.top-login-btn{
+	width: 10%;
+}
+
+.top-login:hover {
+	background-color: #f7941e;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.btn {
+	font-family: Abel;
+	font-size: 1.2em;
+	color: #f7941e;
+	background-color: #fff;
+	border: 3px solid #f7941e;
+	border-radius: 25px;
+	margin: 2px;
+	padding: 5px;
+	text-transform: uppercase;
+}
+
+.btn:hover {
+	font-size: 1.2em;
+	background-color: #f7941e;
+	color: #fff;
+	text-transform: uppercase;
+}
