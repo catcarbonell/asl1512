@@ -55,6 +55,8 @@ class User extends CI_Controller{
  }
 
 
+
+
  public function registration()
  {
   $this->load->library('form_validation');

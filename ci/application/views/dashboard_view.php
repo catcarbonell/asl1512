@@ -1,7 +1,7 @@
-<div class="content">
 
-<div class="logo left">
-	<img src="<?php echo base_url();?>/img/logo.png">
+
+	
+<div class="logo left"><a href="/ci"><img src="<?php echo base_url();?>/img/logo.png"></a>
 </div>
 
 <div class="right top">
@@ -16,6 +16,10 @@
 <div class="clear">
   
   <p>This section represents the area that only logged in members can access.</p>
+  <div id="userprofile" class="box-md inline">
+	
 
-  <h4><?php echo anchor('user/logout', 'Logout'); ?></h4>
-</div><!--<div class="content">-->
+	</div> <!--<div id="profile"-->  
+
+	<h4><?php echo anchor('user/logout', 'Logout'); ?></h4>
+</div><!--<div id="content">-->

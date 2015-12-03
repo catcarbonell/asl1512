@@ -1,8 +1,8 @@
-<div id="content">
+
 
 <div class="signup_wrap">
 
-<div class="logo left"><img src="<?php echo base_url();?>/img/logo.png">
+<div class="logo left"><a href="/ci"><img src="<?php echo base_url();?>/img/logo.png"></a>
 
 <div class="right" id="topheader">
 

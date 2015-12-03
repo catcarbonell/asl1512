@@ -6,6 +6,10 @@ body {
  font-color: #333;
 }
 
+img {
+	border: none;
+}
+
 .menu-bar {
 	width: 100%;
 	background-color: rgba(247,148,30,0.8);
