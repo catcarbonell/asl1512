@@ -19,7 +19,7 @@ $CI->load->model('user_model');
       );*/
     echo form_open("user/listeditform");
     echo "<div class='client-list'>
-      <h2>$rows->fname $rows->lname $rows->email</h2> 
+      <h2>Name: $rows->fname $rows->lname</h2> <h2>Email: $rows->email</h2>
       <p>
       <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
       <input type='submit' name='edit'  value='edit' class='btn'>

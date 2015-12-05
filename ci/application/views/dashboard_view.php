@@ -1,5 +1,4 @@
-<div class="logo left"><a href="/ci"><img src="<?php echo base_url();?>/img/logo.png"></a>
-</div>
+
 
 <div class="right top">
  

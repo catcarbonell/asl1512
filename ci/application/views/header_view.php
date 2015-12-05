@@ -8,4 +8,7 @@
 </head>
 <body>
 	<div id="content">
+		<div class="logo left">
+			<a href="/ci"><img src="<?php echo base_url();?>/img/logo.png"></a>
+		</div>
  
