@@ -16,18 +16,19 @@ foreach($CI->user_model->getclientrecord($pcid) as $row)
 //}
 
 echo "
+<br />
   <input type='hidden' id='id' name='id' value='$row->id' />
 <p>
-  <label for='fname'>First Name:</label>
+  
   <input type='text' id='fname' name='fname' value='$row->fname' />
   </p>
 <p>
-  <label for='lname'>Last Name:</label>
+  
   <input type='text' id='lname' name='lname' value='$row->lname' />
   </p>
 <p>
-  <label for='email'>Email:</label>
-  <input type='text' id='email' name='email' value='$row->lname' />
+  
+  <input type='text' id='email' name='email' value='$row->email' />
   </p>
   ";
 }
