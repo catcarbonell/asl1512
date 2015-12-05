@@ -18,11 +18,11 @@ $CI->load->model('user_model');
         'logged_in'  => TRUE,
       );*/
     echo form_open("user/listeditform");
-    echo "<div class='client-list'>
+    echo "<div id='client-list' class='box-lg'>
       <h2>Name: $rows->fname $rows->lname</h2> <h2>Email: $rows->email</h2>
       <p>
       <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
-      <input type='submit' name='edit'  value='edit' class='btn'>
+      <input type='submit' name='edit'  value='edit' class='edit-btn'>
       </p>
     </div> <br />";
     echo form_close(); 

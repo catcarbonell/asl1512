@@ -15,7 +15,7 @@
 
 </div>
 
-<div class="signup_wrap">
+<div class="box-lg">
 
 <div id="reg_form" class="clear">
 

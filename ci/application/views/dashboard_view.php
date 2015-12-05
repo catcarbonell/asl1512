@@ -1,5 +1,4 @@
 
-
 <div class="right top">
  
 	 <h2 class="inline">Welcome Back, <?php echo $this->session->userdata('fname'); ?>!</h2>
@@ -37,19 +36,13 @@
 	  <input type="hidden" id="utype" name="utype" value="2" />
 	  <input type="hidden" id="tid" name="tid" value="<?php echo $this->session->userdata('user_id'); ?>" />
 	  <p>
-	  <input type="submit" class="btn" value="Add" />
+	  <input type="submit" class="form-btn" value="Add" />
   </p>
  <?php echo form_close(); ?>
 
 
 </div> <!--<div id="addclient"-->  
 
-<!-- CLIENT LIST -->
-
-
-
-
-</div>
 </div><!--<div id="content">-->
 
 

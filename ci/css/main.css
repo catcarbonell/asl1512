@@ -40,7 +40,13 @@ img {
 }
 
 .box-md {
-	width: 25%;
+	width: 40%;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.box-lg {
+	width: 85%;
 	margin: 0 auto;
 	padding: 10px;
 }
@@ -155,6 +161,49 @@ input{
 
 .top-login:hover img{
 	background-color: #f7941e;
+	color: #fff;
+	text-transform: uppercase;
+}
+/* EDIT/DELETE BTN */
+
+.edit-btn {
+	width: 15%;
+	font-family: Abel;
+	font-size: 1.2em;
+	color: #1f871f;
+	background-color: #fff;
+	border: 3px solid #1f871f;
+	border-radius: 25px;
+	margin: 2px;
+	padding: 5px;
+	text-transform: uppercase;
+}
+
+.edit-btn:hover {
+	width: 15%;
+	font-size: 1.2em;
+	background-color: #1f871f;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.del-btn {
+	width: 15%;
+	font-family: Abel;
+	font-size: 1.2em;
+	color: #bf0707;
+	background-color: #fff;
+	border: 3px solid #bf0707;
+	border-radius: 25px;
+	margin: 2px;
+	padding: 5px;
+	text-transform: uppercase;
+}
+
+.del-btn:hover {
+	width: 15%;
+	font-size: 1.2em;
+	background-color: #bf0707;
 	color: #fff;
 	text-transform: uppercase;
 }
