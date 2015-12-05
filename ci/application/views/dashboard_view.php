@@ -1,10 +1,8 @@
 
 <div class="right top">
  
-	 <h2 class="inline">Welcome Back, <?php echo $this->session->userdata('fname'); ?>!</h2>
-
-	 <img class="top-img" src="<?php echo base_url();?>/img/setting.png" alt="settings">
-
+	<h2 class="right">Welcome Back, <?php echo $this->session->userdata('fname'); ?>!  
+	 	<img class="top-img" src="<?php echo base_url();?>/img/setting.png" alt="settings"></h2>
 	<ul id="drop-menu" class="hide clear">
 		<li><?php echo anchor('user/edit', 'Edit Settings'); ?></li>
   	 	<li><?php echo anchor('user/logout', 'Logout'); ?></li>

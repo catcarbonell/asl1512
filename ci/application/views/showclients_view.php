@@ -4,7 +4,7 @@ $CI =& get_instance();
 $CI->load->model('user_model');
 
 #$CI->user_model->getclients($mytid);
-
+	
    foreach($CI->user_model->getclients($mytid) as $rows)
      {
 
@@ -17,14 +17,25 @@ $CI->load->model('user_model');
         'user_email'    => $rows->email,
         'logged_in'  => TRUE,
       );*/
+
+    echo "<div id='client-list-$rows->id' class='box-lg client-box'>
+    <h2>Name:</h2> $rows->fname $rows->lname 
+    <br />
+    <h2>Email:</h2> $rows->email</h2>";
     echo form_open("user/listeditform");
-    echo "<div id='client-list' class='box-lg'>
-      <h2>Name: $rows->fname $rows->lname</h2> <h2>Email: $rows->email</h2>
+    echo "
       <p>
       <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
       <input type='submit' name='edit'  value='edit' class='edit-btn'>
-      </p>
-    </div> <br />";
+      ";
     echo form_close(); 
+       //echo form_open("user/listdeleteform");
+    echo "
+      <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
+      <input type='submit' name='delete'  value='delete' class='del-btn' onclick='delclick(\"$rows->id\")''>
+      </p>";
+
+    //echo form_close(); 
+    echo "</div> <br />";
      }
 ?>

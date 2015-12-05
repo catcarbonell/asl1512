@@ -58,7 +58,7 @@ class User extends CI_Controller{
 
  public function addconfirm()
  {
-  $data['title']= 'Thanks';
+  $data['title']= 'Client Add Confirmed';
   $this->load->view('header_view',$data);
   $this->load->view('addconfirm_view.php', $data);
   $this->load->view('footer_view',$data);
@@ -100,8 +100,21 @@ class User extends CI_Controller{
 
 public function listeditform(){
 	//$this->edituser();
-	#$this->load->library('form_validation');
+	//$this->load->library('form_validation');
 	echo $this->edituserpage($this->input->post('pcid'));
+}
+
+public function listdeleteform(){
+	//$this->edituser();
+	//$this->load->library('form_validation');
+	$pcid = $this->input->post('pcid');
+	$rundel=$this->user_model->quickdeleteuser($pcid);
+	if($rundel == true){
+		//$this->index();
+	}else{
+		echo "Failed to delete clientid $pcid";
+		//$this->index();
+	}
 }
 
 

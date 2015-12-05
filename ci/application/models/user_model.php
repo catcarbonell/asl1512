@@ -82,29 +82,6 @@ function getclients($tid)
 
     $query=$this->db->get('user');
 
-
-    /* if($query->num_rows()>0)
-    {
-      foreach($query->result() as $rows)
-     {
-
-      // Add all data to session
-      /*$newdata = array(
-        'user_id'  => $rows->id,
-        'fname'  => $rows->fname,
-        'lname'  => $rows->lname,
-        'user_name'  => $rows->username,
-        'user_email'    => $rows->email,
-        'logged_in'  => TRUE,
-      );
-    echo "<div class='client-list'>
-      <h2>$rows->fname $rows->lname $rows->email</h2> 
-      <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
-      <input type='submit' class='btn'>edit</a>
-      <a href='/deleteclient?pcid=$rows->id' class='btn'>delete</a>
-    </div> <br />";
-     } */
-
      return $query->result();
      
    //}
@@ -134,7 +111,23 @@ function update_user($udata)
       }
   }
   $this->db->update('user');
-}
+  if($this->db->affected_rows() > 0){
+    return TRUE;
+  }else{
+    return FALSE;
+  }
+}//closes update_user
+
+function quickdeleteuser($pcid){
+  $this->db->where('id', $pcid);
+  $this->db->set('deleted', 1);
+  $this->db->update('user');
+  if($this->db->affected_rows() > 0){
+    return TRUE;
+  }else{
+    return FALSE;
+  }
+} // closes quickdeleteuser
 
 } //closes class User_model
 

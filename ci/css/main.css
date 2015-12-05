@@ -29,11 +29,6 @@ img {
 
 }
 
-#topheader {
-	width: 50%;
-	margin-top: 10px;
-}
-
 #reg_form{
 	margin: 0 auto;
 	width: 50%;
@@ -51,6 +46,24 @@ img {
 	padding: 10px;
 }
 
+.client-box{
+	font-family: 'Abel', Arial, sans-serif;
+	font-size: 1.2em;
+	color: #000;
+	background-color: #fff;
+	border: 2px solid #f7941e;
+	border-radius: 25px;
+	margin: 0 auto;
+	padding: 10px;
+
+}
+.client-box h2 {
+	margin-left: 20px;
+	display: inline;
+
+}
+
+
 /* LINKS */
 a:link, a:visited {
 	color: #a01f0e;
@@ -63,6 +76,12 @@ a:hover {
 
 /* HEADER */
 h1 {
+	font-family: 'Rubik', Arial, sans-serif;
+	color: #a01f0e;
+	font-weight: 900;
+}
+
+h2 {
 	font-family: 'Rubik', Arial, sans-serif;
 	color: #a01f0e;
 	font-weight: 900;
@@ -169,19 +188,19 @@ input{
 .edit-btn {
 	width: 15%;
 	font-family: Abel;
-	font-size: 1.2em;
+	font-size: 1em;
 	color: #1f871f;
 	background-color: #fff;
-	border: 3px solid #1f871f;
+	border: 2px solid #1f871f;
 	border-radius: 25px;
 	margin: 2px;
-	padding: 5px;
+	padding: 2px;
 	text-transform: uppercase;
 }
 
 .edit-btn:hover {
 	width: 15%;
-	font-size: 1.2em;
+	font-size: 1em;
 	background-color: #1f871f;
 	color: #fff;
 	text-transform: uppercase;
@@ -190,19 +209,19 @@ input{
 .del-btn {
 	width: 15%;
 	font-family: Abel;
-	font-size: 1.2em;
+	font-size: 1em;
 	color: #bf0707;
 	background-color: #fff;
-	border: 3px solid #bf0707;
+	border: 2px solid #bf0707;
 	border-radius: 25px;
 	margin: 2px;
-	padding: 5px;
+	padding: 2px;
 	text-transform: uppercase;
 }
 
 .del-btn:hover {
 	width: 15%;
-	font-size: 1.2em;
+	font-size: 1em;
 	background-color: #bf0707;
 	color: #fff;
 	text-transform: uppercase;
