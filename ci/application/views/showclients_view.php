@@ -4,38 +4,94 @@ $CI =& get_instance();
 $CI->load->model('user_model');
 
 #$CI->user_model->getclients($mytid);
-	
+
+
+//** GET CLIENTS  INFO ** //
    foreach($CI->user_model->getclients($mytid) as $rows)
      {
-
-      // Add all data to session
-      /*$newdata = array(
-        'user_id'  => $rows->id,
-        'fname'  => $rows->fname,
-        'lname'  => $rows->lname,
-        'user_name'  => $rows->username,
-        'user_email'    => $rows->email,
-        'logged_in'  => TRUE,
-      );*/
-
     echo "<div id='client-list-$rows->id' class='box-lg client-box'>
+    <div class='box-md'>
     <h2>Name:</h2> $rows->fname $rows->lname 
     <br />
-    <h2>Email:</h2> $rows->email</h2>";
+    <h2>Email:</h2> $rows->email
+    ";
     echo form_open("user/listeditform");
     echo "
       <p>
       <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
-      <input type='submit' name='edit'  value='edit' class='edit-btn'>
+      <input type='submit' name='edit' class='client-box-input' value='Edit Contact Info'>
+      </div>
       ";
     echo form_close(); 
-       //echo form_open("user/listdeleteform");
-    echo "
+
+
+    // ** GET CLIENT STATS **
+    $statrows = $CI->user_model->getstats($rows->id);
+ 
+    if (count($statrows) > 0){
+	    foreach($statrows as $srows)
+	    { echo "
+	    <div class='box-md'>
+	    <h2>Height (in):</h2> $srows->height 
+	    <br />
+	    <h2>Weight (lbs):</h2> $srows->weight
+	    <br />
+	    <h2>Waist (in):</h2> $srows->waist
+
+	    ";
+	    echo form_open("user/statseditform");
+	    echo "
+	      <p>
+	      <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
+	      <input type='submit' name='edit' class='client-box-input'  value='Edit Stats'>
+	      
+	      </div>
+	      ";
+	    echo form_close(); 
+	    }
+	 }else{
+	 	echo " <div class='box-md'>";
+	 	echo form_open("user/addstatspage");
+    	echo "
+	      <p>
+	      <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
+	      <input type='submit' name='addstats' class='client-box-input' value='Add Client Stats'>
+	      </div>
+	      ";
+    	echo form_close();
+	 }
+    
+    // ** DELETE BUTTON ** //
+	  echo "
       <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
       <input type='submit' name='delete'  value='delete' class='del-btn' onclick='delclick(\"$rows->id\")''>
       </p>";
 
     //echo form_close(); 
-    echo "</div> <br />";
+
+
+    // ** NOTES ** // 
+	$noterows = $CI->user_model->getnotes($rows->id);
+	echo "<div class='box-md'> <ul id='notes-box'>";
+
+    if (count($noterows) > 0){
+	    foreach($noterows as $nrows)
+	    { // Show the <ul> container of the notes
+	    	echo "
+	    	<li>$nrows->text_obj</li>
+	    ";}
+	 }else{
+	 	echo form_open("user/addsnotespage");
+    	echo "
+	      <p>
+	      <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
+	      <input type='submit' name='addstats' class='client-box-input' value='Add Notes'>
+	      </div>
+	      ";
+    echo form_close();
+	 }
+
+  	// ENTIRE CLIENT DIV CLOSE
+	 echo "</div> <br />";
      }
 ?>

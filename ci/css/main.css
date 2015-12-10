@@ -36,14 +36,24 @@ img {
 
 .box-md {
 	width: 40%;
-	margin: 0 auto;
-	padding: 10px;
+	padding: 2px;
+	display: inline-block;
+	vertical-align: top;
 }
 
 .box-lg {
 	width: 85%;
-	margin: 0 auto;
+	border: 0;
 	padding: 10px;
+}
+
+#addclientbox{
+	width: 50%;
+	margin-left: 7%;	
+}
+
+#addclientbox:hover h2{
+	color: #f7941e;
 }
 
 .client-box{
@@ -51,18 +61,40 @@ img {
 	font-size: 1.2em;
 	color: #000;
 	background-color: #fff;
-	border: 2px solid #f7941e;
-	border-radius: 25px;
-	margin: 0 auto;
+	border: 1px solid #f7941e;
+	margin: 5px auto;
 	padding: 10px;
 
 }
 .client-box h2 {
+	font-family: 'Abel', Arial, sans-serif;
 	margin-left: 20px;
 	display: inline;
+	font-size:1.2em;
 
 }
 
+/* CLIENT BOX INPUT -- for the Edit buttons*/
+.client-box-input{
+	border: 0;
+	color: #a01f0e;
+	font-size: 1.1em;
+	text-decoration: none;
+	background: none;
+	cursor: pointer;
+	vertical-align: top;
+	text-align: left;
+}
+
+.client-box-input:hover {
+	border: 0;
+	color: #f7941e;
+	font-size: 1.1em;
+	text-decoration: none;
+	background: none;
+	cursor: pointer;
+
+}
 
 /* LINKS */
 a:link, a:visited {
@@ -101,6 +133,9 @@ h2 {
 	clear: both;
 }
 
+.hide {
+	display: none;
+}
 
 .inline{
 	display: inline;
@@ -122,10 +157,23 @@ input{
 	width: 45%;
 }
 
+label
+{
+    display: block;
+}
+
+label span
+{
+    display: inline-block;
+    text-align: right;
+    width: 20%;
+}
 
 .form-btn {
-	font-family: Abel;
+	width: 25%;
+	font-family: 'Rubik', Arial, sans-serif;
 	font-size: 1.2em;
+	font-weight: 900;
 	color: #f7941e;
 	background-color: #fff;
 	border: 3px solid #f7941e;
@@ -176,6 +224,21 @@ input{
 
 .top-login-btn{
 	width: 15%;
+	font-family: 'Rubik', Arial, sans-serif;
+	font-weight: 800;
+	color: #f7941e;
+	background-color: #fff;
+	border: 3px solid #f7941e;
+	border-radius: 25px;
+	margin: 2px;
+	padding: 5px;
+	text-transform: uppercase;
+}
+
+.top-login:hover {
+	background-color: #f7941e;
+	color: #fff;
+	text-transform: uppercase;
 }
 
 .top-login:hover img{
@@ -208,8 +271,9 @@ input{
 
 .del-btn {
 	width: 15%;
-	font-family: Abel;
+	font-family: 'Rubik';
 	font-size: 1em;
+	font-weight: 900;
 	color: #bf0707;
 	background-color: #fff;
 	border: 2px solid #bf0707;

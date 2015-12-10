@@ -10,22 +10,17 @@
  		echo "<title>|| FITSTAR ||</title>";
  	} ?-->
 
+ <!-- CSS -->
  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/css/main.css" />
- <!-- JQUERY -->
  
+ <!-- JQUERY -->
  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
  <script src="<?php echo base_url();?>/js/main.js"></script>
-<SCRIPT>
- function jsdelclick(pcid)
- {
-   delclick(pcid)
- }</SCRIPT>
 
 </head>
 <body>
 	<div id="content">
 		<div class="logo left">
 			<a href="/ci"><img src="<?php echo base_url();?>/img/logo.png"></a>
-		</div> 
-	
+		</div>
  

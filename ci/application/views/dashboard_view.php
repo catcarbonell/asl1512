@@ -1,35 +1,22 @@
+<div id="addclientbox" class="clear">
 
-<div class="right top">
- 
-	<h2 class="right">Welcome Back, <?php echo $this->session->userdata('fname'); ?>!  
-	 	<img class="top-img" src="<?php echo base_url();?>/img/setting.png" alt="settings"></h2>
-	<ul id="drop-menu" class="hide clear">
-		<li><?php echo anchor('user/edit', 'Edit Settings'); ?></li>
-  	 	<li><?php echo anchor('user/logout', 'Logout'); ?></li>
-	</ul>
-	
-</div>
-
-
-<div class="clear">
-  
-  <div id="addclient" class="box-md hide">
-	<h2>+ Add Client</h2>
+  <a href="#addclient" class="slide-click"><h2>+ Add Client</h2></a>
+  <div id="addclient" class="slide-menu hide">
 	<?php echo validation_errors('<p class="error">'); ?>
 	<?php echo form_open("user/registration"); ?>
 	  <p>
-	  <label for="fnamee">First Name:</label>
-	  <input type="text" id="fname" name="fname" value="<?php echo set_value('fname'); ?>" />
+	  
+	  <input type="text" id="fname" name="fname" value="First Name" />
 	  </p>
 	  <p>
-	  <label for="lname">Last Name:</label>
-	  <input type="text" id="lname" name="lname" value="<?php echo set_value('lname'); ?>" />
+	  
+	  <input type="text" id="lname" name="lname" value="Last Name" />
 	  </p>
 	  <p>
-	  <label for="email_address">Email:</label>
-	  <input type="text" id="email_address" name="email_address" value="<?php echo set_value('email_address'); ?>" />
+	  
+	  <input type="text" id="email_address" name="email_address" value="Email" />
 	  </p>
-		
+	
 	  </p>
 	  <input type="hidden" id="utype" name="utype" value="2" />
 	  <input type="hidden" id="tid" name="tid" value="<?php echo $this->session->userdata('user_id'); ?>" />

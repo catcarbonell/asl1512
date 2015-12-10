@@ -24,4 +24,31 @@ function delclick(pcid){
 }
 $( document ).ready(function() {
     console.log( "ready!" );
+
+$('.slide-menu').hide();
+
+  $('a.slide-click').click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+
+        var loadid = $(this).attr("href");
+
+        
+        $('.slide-menu').toggleClass('hide');
+        $(loadid).slideToggle();
+
+    });
+
+
+
+
+    // Closes Modal
+   /*$('.close').on('click', function(e){
+        e.preventDefault();
+        $('.overlay').toggleClass('hide').slideUp('slow');
+         $('.modal').toggleClass('hide').slideUp('slow');
+   });*/
+
+
  });

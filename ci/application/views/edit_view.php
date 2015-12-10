@@ -7,28 +7,21 @@ echo form_open("user/updateediteduser");
 
 foreach($CI->user_model->getclientrecord($pcid) as $row)
 {
-  //foreach($row as $key => $value) {
-    //echo "$key:<br>
-    //<input type='text' id='$key' name='$key' value='$value' /><br>";
-    //echo "$key is at $value <BR>";
-    
-  //}
-//}
 
 echo "
 <br />
   <input type='hidden' id='id' name='id' value='$row->id' />
 <p>
   
-  <input type='text' id='fname' name='fname' value='$row->fname' />
+<input type='text' id='fname' name='fname' value='$row->fname' />
+</p>
+<p>
+  
+<input type='text' id='lname' name='lname' value='$row->lname' />
   </p>
 <p>
   
-  <input type='text' id='lname' name='lname' value='$row->lname' />
-  </p>
-<p>
-  
-  <input type='text' id='email' name='email' value='$row->email' />
+<input type='text' id='email' name='email' value='$row->email' />
   </p>
   ";
 }

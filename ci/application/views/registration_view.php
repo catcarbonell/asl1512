@@ -24,25 +24,24 @@
  <?php echo validation_errors('<p class="error">'); ?>
  <?php echo form_open("user/registration"); ?>
   <p>
-  <label for="fnamee">First Name:</label>
-  <input type="text" id="fname" name="fname" value="<?php echo set_value('fname'); ?>" />
+  <input type="text" id="fname" name="fname" value="First Name" />
   </p>
   <p>
-  <label for="lname">Last Name:</label>
-  <input type="text" id="lname" name="lname" value="<?php echo set_value('lname'); ?>" />
+  <input type="text" id="lname" name="lname" value="Last Name" />
   </p>
   <p>
-  <label for="email_address">Email:</label>
-  <input type="text" id="email_address" name="email_address" value="<?php echo set_value('email_address'); ?>" />
+  <input type="text" id="email_address" name="email_address" value="Email" />
   </p>
   <p>
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" value="<?php echo set_value('password'); ?>" />
+
+  <h4>Password</h4>
+  <input type="password" id="password" name="password"/>
   </p>
+  <h4>Password Confirmation</h4>
   <p>
-  <label for="con_password">Confirm Password:</label>
-  <input type="password" id="con_password" name="con_password" value="<?php echo set_value('con_password'); ?>" />
+  <input type="password" id="con_password" name="con_password"/>
   </p>
+
   <p>
   <input type="submit" class="form-btn" value="Submit" />
   </p>
