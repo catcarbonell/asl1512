@@ -11,11 +11,19 @@
  	} ?-->
 
  <!-- CSS -->
+ <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/bootstrap/css/bootstrap.min.css" />
+ <link href="<?php echo base_url();?>/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet">
  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/css/main.css" />
- 
+
  <!-- JQUERY -->
  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+ <script src="<?php echo base_url();?>/bootstrap/js/bootstrap.min.js"></script>
+ <script src="<?php echo base_url();?>/bootstrap-editable/js/bootstrap-editable.js"></script>
  <script src="<?php echo base_url();?>/js/main.js"></script>
+
+
+
+
 
 </head>
 <body>

@@ -224,6 +224,31 @@ function deletenote($pcid){
   }
 } // closes deletenote()
 
+function updatenotes($udata){
+  foreach($udata as $key => $value)
+  {   // if key matches the id input
+      if ($key == 'pk')
+      {
+        $key = 'id';
+      }
+      if ($key == 'id')
+      {
+        $this->db->where($key, $value);
+      }
+      else
+      {
+         $this->db->set($key, $value);
+      }
+  }
+  $this->db->update('user_obj');
+  if($this->db->affected_rows() > 0){
+    return TRUE;
+  }else{
+    return FALSE;
+  }
+}//closes updatestats
+
+
 } //closes class User_model
 
 

@@ -157,8 +157,8 @@ h2 {
 
 /* FORM */
 
-input{
-	font-family: Abel;
+input {
+	font-family: 'Abel', Arial, sans-serif;
 	border: 1px solid #f7941e;
 	border-radius: 25px;
 	margin: 2px;
@@ -176,6 +176,10 @@ label span
     display: inline-block;
     text-align: right;
     width: 20%;
+}
+
+#reg_form{
+	font-family: 'Abel', Arial, sans-serif;
 }
 
 .form-btn {
@@ -259,8 +263,9 @@ label span
 
 .edit-btn {
 	width: 15%;
-	font-family: Abel;
+	font-family: 'Rubik';
 	font-size: 1em;
+	font-weight: 900;
 	color: #1f871f;
 	background-color: #fff;
 	border: 2px solid #1f871f;

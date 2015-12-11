@@ -202,10 +202,24 @@ public function statseditform(){
 
 public function addnotesform(){
 	$this->user_model->addnotes();
-	$this->index();
+	//$this->index();
+	$this->addnotespage();
 }
 
-//DELETE CLIENT
+//UPDATE NOTE
+ public function updatenotesform(){
+ 	// in the user_model model, use the update user function from what the user placed in the input element
+ 	$myarr = $this->input->post();
+ 	$myarr[$myarr['name']] = $myarr['value'];
+    $myarr['id'] = $myarr['pk'];
+    unset($myarr['name']);
+    unset($myarr['value']);
+    unset($myarr['pk']);
+
+ 	$this->user_model->updatenotes($myarr);
+ }
+
+//DELETE NOTE
 public function deletenote(){
 
 	$pcid = $this->input->post('pcid');
@@ -216,7 +230,6 @@ public function deletenote(){
 		
 	}
 }
-
 
 // LOGOUT CONTROLLER 
  public function logout()

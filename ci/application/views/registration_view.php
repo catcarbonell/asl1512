@@ -3,7 +3,6 @@
 
  <?php echo form_open("user/login"); ?>
 
-  
       <span>Email:</span>
       <input type="text" id="email" class="top-login" name="email" value="" />
   
@@ -15,9 +14,9 @@
 
 </div>
 
-<div class="box-lg">
+<div class="box-lg clear">
 
-<div id="reg_form" class="clear">
+<div id="reg_form">
 
   <h1>Membership Sign Up!</h1>
 
