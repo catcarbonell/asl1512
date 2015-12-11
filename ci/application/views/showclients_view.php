@@ -71,27 +71,39 @@ $CI->load->model('user_model');
 
 
     // ** NOTES ** // 
-	$noterows = $CI->user_model->getnotes($rows->id);
-	echo "<div class='box-md'> <ul id='notes-box'>";
+	//$noterows = $CI->user_model->getnotes($rows->id);
+
+	//echo "<div class='box-md'>";
+	/*echo "<ul id='notes-box'>";
 
     if (count($noterows) > 0){
 	    foreach($noterows as $nrows)
 	    { // Show the <ul> container of the notes
 	    	echo "
-	    	<li>$nrows->text_obj</li>
-	    ";}
-	 }else{
-	 	echo form_open("user/addsnotespage");
+	    	<li>$nrows->text_entry</li>
+	    ";
+	    echo form_open("user/addnotespage");
     	echo "
 	      <p>
 	      <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
-	      <input type='submit' name='addstats' class='client-box-input' value='Add Notes'>
+	      <input type='submit' name='addnotes' class='client-box-input' value='View Notes'>
 	      </div>
 	      ";
     echo form_close();
-	 }
+	    ;}
+	 }else{*/
+	 	
+	 	echo form_open("user/addnotespage");
+    	echo "
+	      <p>
+	      <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
+	      <input type='submit' name='addnotes' class='client-box-input' value='View Notes'>
+	      
+	      ";
+    echo form_close();
+	 //}
 
   	// ENTIRE CLIENT DIV CLOSE
-	 echo "</div> <br />";
+	 echo "</div></div> <br />";
      }
 ?>

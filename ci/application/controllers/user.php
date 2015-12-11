@@ -106,12 +106,12 @@ class User extends CI_Controller{
  } //close editstatspage()
 
 //ADD/EDIT NOTES PAGE
-public function addnotespage($pcid)
+public function addnotespage()
 {
   $data['pcid'] = $this->input->post('pcid');
   $this->load->view('header_view',$data);
   $this->load->view('loggedin_view',$data);
-  $this->load->view('addnotes_view.php', $data);
+  $this->load->view('addnotes_view', $data);
   $this->load->view('footer_view',$data);
 } //close addnotespage
 
@@ -162,8 +162,7 @@ public function listdeleteform(){
 
 	$pcid = $this->input->post('pcid');
 	$rundel=$this->user_model->quickdeleteuser($pcid);
-	if($rundel == true){
-		
+	if($rundel == true){	
 	}else{
 		echo "Failed to delete clientid $pcid";
 		
@@ -197,6 +196,26 @@ public function statseditform(){
  	$this->user_model->updatestats($this->input->post());
  	$this->index();
  }
+
+
+//ADD NOTES
+
+public function addnotesform(){
+	$this->user_model->addnotes();
+	$this->index();
+}
+
+//DELETE CLIENT
+public function deletenote(){
+
+	$pcid = $this->input->post('pcid');
+	$rundel=$this->user_model->deletenote($pcid);
+	if($rundel == true){
+	}else{
+		echo "Failed to delete note";
+		
+	}
+}
 
 
 // LOGOUT CONTROLLER 

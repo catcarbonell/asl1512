@@ -3,13 +3,13 @@
 
  <?php echo form_open("user/login"); ?>
 
-  <label for="email">Email:</label>
-  <input type="text" id="email" class="top-login" name="email" value="" />
-
-  <label for="password">Password:</label>
-  <input type="password" id="pass" class="top-login" name="pass" value="" />
-  <input type="submit" class="top-login top-login-btn right" value="Sign in" />
-
+  
+      <span>Email:</span>
+      <input type="text" id="email" class="top-login" name="email" value="" />
+  
+      <span>Password:</span>
+      <input type="password" id="pass" class="top-login" name="pass" value="" />
+      <input type="submit" class="top-login top-login-btn right" value="Sign in" />
 
  <?php echo form_close(); ?>
 
@@ -24,22 +24,34 @@
  <?php echo validation_errors('<p class="error">'); ?>
  <?php echo form_open("user/registration"); ?>
   <p>
-  <input type="text" id="fname" name="fname" value="First Name" />
+  <label>
+    <span>First Name:</span>
+    <input type="text" id="fname" name="fname" value="First Name" />
+  </label>
   </p>
   <p>
-  <input type="text" id="lname" name="lname" value="Last Name" />
+  <label>
+    <span>Last Name:</span> 
+    <input type="text" id="lname" name="lname" value="Last Name" />
+  </label>
   </p>
   <p>
-  <input type="text" id="email_address" name="email_address" value="Email" />
+  <label>
+    <span>Email</span>
+    <input type="email" id="email_address" name="email_address" value="Email" />
+  </label>
   </p>
   <p>
-
-  <h4>Password</h4>
+  <label>
+  <span>Password</span>
   <input type="password" id="password" name="password"/>
+  </label>
   </p>
-  <h4>Password Confirmation</h4>
   <p>
-  <input type="password" id="con_password" name="con_password"/>
+  <label>
+    <span>Password Confirmation</span>
+    <input type="password" id="con_password" name="con_password"/>
+  </label>
   </p>
 
   <p>

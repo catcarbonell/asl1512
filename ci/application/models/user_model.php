@@ -130,23 +130,6 @@ function quickdeleteuser($pcid){
   }
 } // closes quickdeleteuser()
 
-// ACCESS USER_OBJ TABLE
-// show a <li>list of notes-- find by UID/client ID
-function getnotes($pcid){
-   $this->db->where('id', $pcid);
-   $query=$this->db->get('user_obj');
-} // closes getnotes()
-
-// ADD NOTES -- notes are new rows in DB, will find and associate each separate note with UID/client ID
-function addnotes($pcid){
- $data=array(
-    'text_entry'=>$this->input->post('text_entry'),
-    'tid'=>$this->input->post('tid'),
-    'uid'=>$pcid
-  );
-  $this->db->insert('user_obj',$data);
- } //end addnotes
-
 
 // ADD STATS
 public function addstats()
@@ -203,23 +186,49 @@ function updatestats($udata){
 function bmicalc(){
 
 } // closes bmicalc
-} //closes class User_model
 
-
-//GET NOTES
-function getnotes($cid)
-{
-    // where tid (trainer ID) in the DB = the tid input
-    $this->db->where('cid',$cid);
+// ACCESS USER_OBJ TABLE
+function getnotes($pcid){
+    $this->db->where('cid',$pcid);
 
     // where status in deleted column in the DB = 0 (active)
-    //$this->db->where('deleted', 0);
+    $this->db->where('deleted', 0);
 
-    // access DB table 'user'
-    $query=$this->db->get('stats');
+    // access DB table 'user_obj'
+    $query=$this->db->get('user_obj');
 
     // return/display result
     return $query->result();
-     
+} // closes getnotes()
+
+// ADD NOTES -- notes are new rows in DB, will find and associate each separate note with UID/client ID
+function addnotes(){
+ $data=array(
+    'text_entry'=>$this->input->post('text_entry'),
+    'entry_type'=>$this->input->post('entry_type'),
+    'deleted'=>$this->input->post('deleted'),
+    'cid'=>$this->input->post('cid')
+  );
+  $this->db->insert('user_obj',$data);
+ } //end addnotes
+
+
+function deletenote($pcid){
+  $this->db->where('id', $pcid);
+  $this->db->set('deleted', 1);
+  $this->db->update('user_obj');
+  if($this->db->affected_rows() > 0){
+    return TRUE;
+  }else{
+    return FALSE;
   }
+} // closes deletenote()
+
+} //closes class User_model
+
+
+
+
+
+
 ?>

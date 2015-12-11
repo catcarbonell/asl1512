@@ -96,6 +96,15 @@ img {
 
 }
 
+#client-notes h2{
+	font-family: 'Abel', arial, sans-serif;
+	color: #333;
+}
+
+#client-notes ul li{
+	list-style-type: circle;
+}
+
 /* LINKS */
 a:link, a:visited {
 	color: #a01f0e;
@@ -138,7 +147,7 @@ h2 {
 }
 
 .inline{
-	display: inline;
+	display: inline-block;
 }
 
 .logo img{
