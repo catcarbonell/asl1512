@@ -1,6 +1,7 @@
-<div id="addclientbox" class="clear">
+<div id="addclientbox" class="clear row">
 
   <a href="#addclient" class="slide-click"><h2>+ Add Client</h2></a>
+
   <div id="addclient" class="slide-menu hide">
 	<?php echo validation_errors('<p class="error">'); ?>
 	<?php echo form_open("user/registration"); ?>

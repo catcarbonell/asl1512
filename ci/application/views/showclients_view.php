@@ -9,12 +9,43 @@ $CI->load->model('user_model');
 //** GET CLIENTS  INFO ** //
    foreach($CI->user_model->getclients($mytid) as $rows)
      {
-    echo "<div id='client-list-$rows->id' class='box-lg client-box'>
-    <div class='box-md'>
-    <h2>Name:</h2> $rows->fname $rows->lname 
-    <br />
-    <h2>Email:</h2> $rows->email
+
+    //ADD PICTURE
+    echo "
+    <div id='client-list-$rows->id' class='client-box'>
+    <div class='row'>
     ";
+
+    echo "<div class='col-md-4'>";
+    echo "<img src='<?php echo base_url();?>/img/uploads/$rows->profilepic' class='img-responsive'>";
+    echo form_open("user/clientprofilepic");
+    	echo "
+ 
+		    	<input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
+		    	<input type='submit' name='profilepic' class='client-box-input' value='Add/Change Profile Pic'>
+		    
+			 ";
+
+	echo form_close();
+
+	echo form_open("user/addnotespage");
+    	echo "
+
+		    	<input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
+		    	<input type='submit' name='addnotes' class='client-box-input' value='View Notes'>
+
+	      ";
+
+	echo form_close();
+	echo "</div>";
+
+    echo "
+    <div class='col-md-3'>
+	    <h2>Name:</h2> $rows->fname $rows->lname 
+	    <br />
+	    <h2>Email:</h2> $rows->email
+    ";
+
     echo form_open("user/listeditform");
     echo "
       <p>
@@ -30,27 +61,29 @@ $CI->load->model('user_model');
  
     if (count($statrows) > 0){
 	    foreach($statrows as $srows)
-	    { echo "
-	    <div class='box-md'>
-	    <h2>Height (in):</h2> $srows->height 
-	    <br />
-	    <h2>Weight (lbs):</h2> $srows->weight
-	    <br />
-	    <h2>Waist (in):</h2> $srows->waist
+	    { 
+
+	    echo "
+
+	    <div class='col-md-3'>
+		    <h2>Height (in):</h2> <span> $srows->height </span>
+		    <br />
+		    <h2>Weight (lbs):</h2> <span> $srows->weight </span>
+		    <br />
+		    <h2>Waist (in):</h2> <span> $srows->waist </span>
 
 	    ";
 	    echo form_open("user/statseditform");
 	    echo "
-	      <p>
-	      <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
-	      <input type='submit' name='edit' class='client-box-input'  value='Edit Stats'>
-	      
+		      <p>
+		      <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
+		      <input type='submit' name='edit' class='client-box-input'  value='Edit Stats'>
 	      </div>
 	      ";
 	    echo form_close(); 
 	    }
 	 }else{
-	 	echo " <div class='box-md'>";
+	 	echo " <div class='col-md-3'>";
 	 	echo form_open("user/addstatspage");
     	echo "
 	      <p>
@@ -60,27 +93,29 @@ $CI->load->model('user_model');
 	      ";
     	echo form_close();
 	 }
+
+	echo "</div>"; // Closes first row
     
-    // ** DELETE BUTTON ** //
-	  echo "
+	echo "<div class='row'> ";
+
+	// ** DELETE BUTTON ** //
+	 echo "
+	  <div class='col-md-4 pull-right'>
       <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
-      <input type='submit' name='delete'  value='delete' class='del-btn' onclick='delclick(\"$rows->id\")''>
-      </p>";
+      <input type='submit' name='delete'  value='delete' class='del-btn right' onclick='delclick(\"$rows->id\")''>
+      </div>
+	
+      ";
 
-
-	// VIEW NOTES
-	echo form_open("user/addnotespage");
-    	echo "
-	      <p>
-	      <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
-	      <input type='submit' name='addnotes' class='edit-btn' value='View Notes'>
-	      
-	      ";
-    echo form_close();
+	echo "</div>";
 	 //}
+
+
 
   	// ENTIRE CLIENT DIV CLOSE
 	 echo "
-	 </div> <br />";
+	 </div>";
      }
 ?>
+
+</div> <!-- ENDS CONTAINER -->

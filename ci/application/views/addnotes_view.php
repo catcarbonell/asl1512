@@ -39,15 +39,15 @@ $CI->load->model('user_model');
      {
     echo "
     <li id='note-list-$rows->id' data-pk='$rows->id'  class='note note-edit'>
-    <h2>$rows->text_entry</h2>
+    
+    	<h2>$rows->text_entry</h2>
     </li>
+
+     <input type='submit' name='delete' class='client-box-input inline' value='delete' onclick='delnoteclick(\"$rows->id\")''>
     ";
 
       
-    echo "
-      <input type='submit' name='delete'  class='client-box-input inline' value='delete' onclick='delnoteclick(\"$rows->id\")''>
-     
-      ";
+   
 }
 
 

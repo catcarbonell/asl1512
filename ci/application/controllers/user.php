@@ -18,16 +18,20 @@ class User extends CI_Controller{
    $this->dashboard();
   }
   else{
-   $data['title']= 'Home';
-   $this->load->view('header_view',$data);
-   $this->load->view("registration_view.php", $data);
-   $this->load->view('footer_view',$data);
+   $this->main();
   }
  } // close index()
 
 
 //LOGIN CONTROLLER -- draws information from form, checks USER table from DB to confirm
-
+ public function main()
+ {
+   $data['title']= 'Home';
+   $this->load->view('header_view',$data);
+   $this->load->view("registration_view.php", $data);
+   $this->load->view('footer_view',$data);
+ }
+ 
  public function login()
  {
   $email=$this->input->post('email');
@@ -246,7 +250,6 @@ public function deletenote(){
   $this->session->sess_destroy();
   $this->index();
  }
-
 
 
 }

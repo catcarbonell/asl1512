@@ -184,6 +184,15 @@ function updatestats($udata){
 
 //BMI CALCULATOR
 function bmicalc(){
+//Get height
+$ht = $this->db->where('height',$height);
+//Get weight
+$wt = $this->db->where('weight',$weight);
+//Get waist
+$wst = $this->db->where('waist',$waist);
+
+//Calculate
+
 
 } // closes bmicalc
 
