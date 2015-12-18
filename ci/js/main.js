@@ -25,8 +25,7 @@ function delclick(pcid){
 
 function delnoteclick(pcid){
   $( document ).ready(function() {
-
-         //	var pcid = $('#pcid').val();
+	 //	var pcid = $('#pcid').val();
          $.post('/ci/index.php/user/deletenote',
          { 'pcid':pcid },
             // when the Web server responds to the request
@@ -82,6 +81,13 @@ $('a.slide-click').click(function(e) {
     
 }); // closes EDITABLE
 
+
+//FEATHERLIGHT GALLERY
+$('a.gallery').featherlightGallery({
+    openSpeed: 300,
+    previousIcon: '&#9664;',
+      nextIcon: '&#9654;'
+});
    
 
 

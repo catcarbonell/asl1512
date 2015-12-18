@@ -1,10 +1,10 @@
 <?php
-class Upload extends CI_Controller {
+class Uploadprogress extends CI_Controller {
   function __construct()
         {
         parent::__construct();
         $this->load->helper(array('form', 'url'));
-        $this->load->model('upload_model');
+        $this->load->model('uploadprogress_model');
         }
 
         public function index()
@@ -12,7 +12,7 @@ class Upload extends CI_Controller {
               $data['pcid'] = $this->input->post('pcid');
               $this->load->view('header_view',$data);
               $this->load->view('loggedin_view',$data);
-              $this->load->view('uploadform_view', $data);
+              $this->load->view('progress_view', $data);
               $this->load->view('footer_view',$data);
         } //close uploadformpage*/
 
@@ -31,7 +31,7 @@ class Upload extends CI_Controller {
     if($this->input->post('upload'))
     {
         $pcid = $this->input->post('pcid');
-        $config['upload_path'] = 'img/';
+        $config['upload_path'] = 'img/uploads/progress/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['file_name'] = $pcid; 
         //$config['max_size']    = '1024';
@@ -43,7 +43,7 @@ class Upload extends CI_Controller {
         if ( ! $this->upload->do_upload())
         {
             $error = array('error' => $this->upload->display_errors());
-            $this->load->view('upload_form', $error);
+            $this->load->view('index', $error);
         }
         else
         {
@@ -52,19 +52,20 @@ class Upload extends CI_Controller {
             
             $file=array(
                 'path_prefix' => '/ci/',
-                'profile_pic' => $data['raw_name'] ,
+                'photo' => $data['raw_name'] ,
                 'thumb_name'=>$data['raw_name'].'_thumb',
                 'ext' => $data['file_ext'],
                 'path' => $config['upload_path'],
+                'pcid' => $pcid
                 //'upload_date'=>time()
         );
 
-        $this->upload_model->add_image($file);
+        $this->uploadprogress_model->add_image($file);
 
         $data = array('upload_data' => $this->upload->data());
        
         
-        $this->dashboard();
+        $this->index();
         }
     }
     else

@@ -130,6 +130,26 @@ public function uploadformpage()
   $this->load->view('footer_view',$data);
 } //close uploadformpage
 
+
+public function uploadsuccess()
+{
+  $data['pcid'] = $this->input->post('pcid');
+  $this->load->view('header_view',$data);
+  $this->load->view('loggedin_view',$data);
+  $this->load->view('uploadsuccess', $data);
+  $this->load->view('footer_view',$data);
+} //close uploadformpage
+
+//UPLOAD PROGRESS PICTURE FORM
+public function uploadprogresspage()
+{
+  $data['pcid'] = $this->input->post('pcid');
+  $this->load->view('header_view',$data);
+  $this->load->view('loggedin_view',$data);
+  $this->load->view('progress_view', $data);
+  $this->load->view('footer_view',$data);
+} //close uploadformpage
+
  // ***  USER INTERACTION CONTROLLERS *** // 
 
 // Registration -- works for both TRAINER SIGN UP and CLIENT ADD 

@@ -29,6 +29,10 @@ img {
 
 }
 
+#gallery {
+	width: 75%;
+	margin: 0 auto;
+}
 
 .box-md {
 	width: 40%;
@@ -183,7 +187,7 @@ label span
 	margin: 10% auto;
 }
 .form-btn {
-	width: 100%;
+	width: 35%;
 	font-family: 'Rubik', Arial, sans-serif;
 	font-size: 1.2em;
 	font-weight: 900;

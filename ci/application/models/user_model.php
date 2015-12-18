@@ -181,7 +181,7 @@ function updatestats($udata){
 }//closes updatestats
 
 //BMI CALCULATOR
-function bmicalc($pcid){
+/*function bmicalc($pcid){
     //Get height 
     $ht = $this->db->where('height',$height);
     //Get weight
@@ -199,7 +199,7 @@ function bmicalc($pcid){
     //Return result
     return $bmi;
 
-} // closes bmicalc
+} // closes bmicalc*/
 
 
 // ACCESS USER_OBJ TABLE

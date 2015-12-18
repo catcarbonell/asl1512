@@ -35,7 +35,7 @@ $CI->load->model('user_model');
 
 		echo form_close();
 	}else{
-			    echo form_open("user/uploadformpage");
+			echo form_open("user/uploadformpage");
 
 	    	echo "
 			    	<input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
@@ -43,20 +43,12 @@ $CI->load->model('user_model');
 			    
 				 ";
 
-		echo form_close();
+			echo form_close();
 	}
 
-	// ** VIEW NOTES **
-	echo form_open("user/addnotespage");
-    	echo "
+	
 
-		    	<input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
-		    	<input type='submit' name='addnotes' class='client-box-input' value='View Notes'>
-
-	      ";
-
-	echo form_close();
-	echo "</div>"; // Close first div
+	echo "</div>"; // Close first div col
 
 	// ** BASIC CLIENT INFO **
     echo "
@@ -71,10 +63,34 @@ $CI->load->model('user_model');
       <p>
       <input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
       <input type='submit' name='edit' class='client-box-input' value='Edit Contact Info'>
-      </div>
+      </p>
       ";
     echo form_close(); 
 
+// ** VIEW NOTES **
+	echo form_open("user/addnotespage");
+    	echo "
+
+		    	<input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
+		    	<input type='submit' name='addnotes' class='client-box-input' value='View Notes'>
+
+	      ";
+
+	echo form_close();
+
+
+	// ** VIEW PROGRESS PICS **
+	echo form_open("user/uploadprogresspage");
+
+	    echo "
+		    	<input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
+		    	<input type='submit' name='progresspics' class='client-box-input' value='View Progress Photos'>
+			    
+			 ";
+
+	echo form_close();
+
+	echo "</div>"; // Close second div col
 
     // ** GET CLIENT STATS **
     $statrows = $CI->user_model->getstats($rows->id);
