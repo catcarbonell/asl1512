@@ -10,24 +10,43 @@ $CI->load->model('user_model');
    foreach($CI->user_model->getclients($mytid) as $rows)
      {
 
-    //ADD PICTURE
+    // ** START CLIENT INFO DISPLAY BOX **
+   	// Open first row
     echo "
     <div id='client-list-$rows->id' class='client-box'>
     <div class='row'>
     ";
 
+    //Start first div
     echo "<div class='col-md-4'>";
-    echo "<img src='<?php echo base_url();?>/img/uploads/$rows->profilepic' class='img-responsive'>";
-    echo form_open("user/clientprofilepic");
-    	echo "
- 
-		    	<input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
-		    	<input type='submit' name='profilepic' class='client-box-input' value='Add/Change Profile Pic'>
-		    
-			 ";
 
-	echo form_close();
+    // ** DISPLAY PROFILE PIC **
+    $pics = $CI->user_model->getprofilethumb($rows->id);
 
+    if($pics != ''){
+    	$thumb = $pics;
+	    echo "<img src='$pics' class='img-responsive'>";
+	    echo form_open("user/uploadformpage");
+
+	    	echo "
+			    	<input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                   
+			    	<input type='submit' name='profilepic' class='client-box-input' value='Change Profile Pic'>
+				 ";
+
+		echo form_close();
+	}else{
+			    echo form_open("user/uploadformpage");
+
+	    	echo "
+			    	<input type='hidden' id='pcid' name='pcid' value='$rows->id' />                                                                                                                                                                                                                                               
+			    	<input type='submit' name='profilepic' class='client-box-input' value='Add Profile Pic'>
+			    
+				 ";
+
+		echo form_close();
+	}
+
+	// ** VIEW NOTES **
 	echo form_open("user/addnotespage");
     	echo "
 
@@ -37,8 +56,9 @@ $CI->load->model('user_model');
 	      ";
 
 	echo form_close();
-	echo "</div>";
+	echo "</div>"; // Close first div
 
+	// ** BASIC CLIENT INFO **
     echo "
     <div class='col-md-3'>
 	    <h2>Name:</h2> $rows->fname $rows->lname 
@@ -71,7 +91,8 @@ $CI->load->model('user_model');
 		    <h2>Weight (lbs):</h2> <span> $srows->weight </span>
 		    <br />
 		    <h2>Waist (in):</h2> <span> $srows->waist </span>
-
+		    <br />
+			<h2>BMI:</h2> <span>  $srows->bmi </span>
 	    ";
 	    echo form_open("user/statseditform");
 	    echo "
@@ -83,6 +104,8 @@ $CI->load->model('user_model');
 	    echo form_close(); 
 	    }
 	 }else{
+
+	 	// ** DISPLAY OR ADD STATS **
 	 	echo " <div class='col-md-3'>";
 	 	echo form_open("user/addstatspage");
     	echo "
@@ -96,7 +119,7 @@ $CI->load->model('user_model');
 
 	echo "</div>"; // Closes first row
     
-	echo "<div class='row'> ";
+	echo "<div class='row'> "; // Open second row
 
 	// ** DELETE BUTTON ** //
 	 echo "
@@ -107,7 +130,7 @@ $CI->load->model('user_model');
 	
       ";
 
-	echo "</div>";
+	echo "</div>"; // Closes second row
 	 //}
 
 

@@ -138,6 +138,7 @@ public function addstats()
     'height'=>$this->input->post('height'),
     'weight'=>$this->input->post('weight'),
     'waist'=>$this->input->post('waist'),
+    'bmi'=> bmicalc()->input->post('bmi'),
     'cid'=>$this->input->post('cid')
   );
   $this->db->insert('stats',$data);
@@ -147,9 +148,6 @@ public function addstats()
 function getstats($pcid)
 {
     $this->db->where('cid',$pcid);
-
-    // where status in deleted column in the DB = 0 (active)
-    //$this->db->where('deleted', 0);
 
     // access DB table 'user'
     $query=$this->db->get('stats');
@@ -183,18 +181,26 @@ function updatestats($udata){
 }//closes updatestats
 
 //BMI CALCULATOR
-function bmicalc(){
-//Get height
-$ht = $this->db->where('height',$height);
-//Get weight
-$wt = $this->db->where('weight',$weight);
-//Get waist
-$wst = $this->db->where('waist',$waist);
+function bmicalc($pcid){
+    //Get height 
+    $ht = $this->db->where('height',$height);
+    //Get weight
+    $wt = $this->db->where('weight',$weight);
+    //Get waist
+    $wst = $this->db->where('waist',$waist);
 
-//Calculate
+    //Conversion for calculation
+   // $htc = $ht * 2.52;
+    $htc = ($ht * $ht)*703;
 
+    //Calculate
+    $bmi = $wt / $htc;
+
+    //Return result
+    return $bmi;
 
 } // closes bmicalc
+
 
 // ACCESS USER_OBJ TABLE
 function getnotes($pcid){
@@ -256,6 +262,38 @@ function updatenotes($udata){
     return FALSE;
   }
 }//closes updatestats
+
+// GET/ACCESS Profile Pic
+function getprofilepic($pcid)
+{   //Where ID is Client's ID, user type is 2
+    $this->db->where('id',$pcid);
+    $this->db->where('utype', 2);
+    //$this->db->where('profile_pic', $profilepic);
+
+    // access DB table 'user'
+    $query=$this->db->get('user');
+
+    // return/display result
+    $result = $query->result_array();
+    return $result[0]['profile_pic'];
+     
+  } // closes getprofilepic()
+
+// GET/ACCESS Profile Pic
+function getprofilethumb($pcid)
+{   //Where ID is Client's ID, user type is 2
+    $this->db->where('id',$pcid);
+    $this->db->where('utype', 2);
+    //$this->db->where('profile_pic', $profilepic);
+
+    // access DB table 'user'
+    $query=$this->db->get('user');
+
+    // return/display result
+    $result = $query->result_array();
+    return $result[0]['profile_thumb'];
+     
+  } // closes getprofilepic()
 
 
 } //closes class User_model

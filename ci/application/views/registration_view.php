@@ -14,7 +14,7 @@
 </div>
 
 <div class="row">
-  <div id="reg_form" class="col-md-4">
+  <div id="reg_form" class="col-md-6">
 
     <h2>Membership Sign Up!</h2>
 

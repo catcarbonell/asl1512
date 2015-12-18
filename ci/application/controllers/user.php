@@ -31,7 +31,7 @@ class User extends CI_Controller{
    $this->load->view("registration_view.php", $data);
    $this->load->view('footer_view',$data);
  }
- 
+
  public function login()
  {
   $email=$this->input->post('email');
@@ -120,6 +120,15 @@ public function addnotespage()
 } //close addnotespage
 
 
+//UPLOAD PROFILE PICTURE FORM
+public function uploadformpage()
+{
+  $data['pcid'] = $this->input->post('pcid');
+  $this->load->view('header_view',$data);
+  $this->load->view('loggedin_view',$data);
+  $this->load->view('uploadform_view', $data);
+  $this->load->view('footer_view',$data);
+} //close uploadformpage
 
  // ***  USER INTERACTION CONTROLLERS *** // 
 
@@ -172,7 +181,6 @@ public function listdeleteform(){
 		
 	}
 }
-
 
 //UPDATE CLIENT
  public function updateediteduser(){
@@ -252,5 +260,5 @@ public function deletenote(){
  }
 
 
-}
+} // CLOSE ENTIRE CONTROLLER
 ?>
