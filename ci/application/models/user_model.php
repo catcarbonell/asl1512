@@ -239,6 +239,7 @@ function deletenote($pcid){
   }
 } // closes deletenote()
 
+
 function updatenotes($udata){
   foreach($udata as $key => $value)
   {   // if key matches the id input
@@ -294,6 +295,18 @@ function getprofilethumb($pcid)
     return $result[0]['profile_thumb'];
      
   } // closes getprofilepic()
+
+ function deletephoto($pcid){
+  $this->db->where('id', $pcid);
+  $this->db->set('deleted', 1);
+  $this->db->update('progress_photos');
+  if($this->db->affected_rows() > 0){
+    return TRUE;
+  }else{
+    return FALSE;
+  echo 'boop';
+  }
+} // closes deletephoto()
 
 
 } //closes class User_model

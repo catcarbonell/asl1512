@@ -263,6 +263,19 @@ public function deletenote(){
 	}
 }
 
+//DELETE PROGRESS PHOTO
+public function deletephoto(){
+
+  $pcid = $this->input->post('pcid');
+  $rundel=$this->user_model->deletephoto($pcid);
+  if($rundel == true){
+  }else{
+    echo "Failed to delete photo";
+    
+  }
+}
+   
+
 // LOGOUT CONTROLLER 
  public function logout()
 

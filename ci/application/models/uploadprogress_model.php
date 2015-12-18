@@ -36,7 +36,10 @@ function getprogressthumb($pcid)
     return $result[0]['profile_thumb'];
      
   } // closes getprofilepic()
-  
+
+ 
+
+
 function add_image($data)
 {
 	$full_pic = $data['path_prefix'] . $data['path'] . $data['photo'] . $data['ext'];
@@ -49,4 +52,5 @@ function add_image($data)
     $this->db->set('photo', $full_pic);
     $this->db->set('photo_thumb', $full_thumb);
     $this->db->insert('progress_photos');
-}}
+	}
+}

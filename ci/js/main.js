@@ -47,6 +47,29 @@ function delnoteclick(pcid){
 });
 }
 
+function delphotoclick(pcid){
+  $( document ).ready(function() {
+   // var pcid = $('#pcid').val();
+         $.post('/ci/index.php/user/deletephoto',
+         { 'pcid':pcid },
+            // when the Web server responds to the request
+            function(result) {
+
+              // clear any message that may have already been written
+              $('#bad_update').replaceWith('');
+        
+              // if the result is TRUE write a message to the page
+              if (result) {
+              $('#pcid').after('<div id="bad_update" style="color:red;">' +
+              '<p>(Failed to Delete Photo)</p></div>');
+              } //close if function(result)
+            }
+        )
+      //alert(pcid);
+      $('#photo-list-' + pcid).slideUp();  
+
+});
+}
 
 
 

@@ -25,7 +25,8 @@ class Uploadprogress extends CI_Controller {
           $this->load->view('showclients_view.php');
           $this->load->view('footer_view',$data);
          } //close dashboard()
-         
+   
+
   function do_upload()
 {
     if($this->input->post('upload'))
@@ -81,7 +82,7 @@ $config['image_library'] = 'gd2';
 $config['source_image'] =$data['full_path'];
 $config['create_thumb'] = TRUE;
 $config['maintain_ratio'] = TRUE;
-$config['width'] = 275;
+$config['width'] = 250;
 $config['height'] = 250;
 $this->load->library('image_lib', $config);
 $this->image_lib->resize();
