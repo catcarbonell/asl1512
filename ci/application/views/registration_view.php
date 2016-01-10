@@ -13,7 +13,9 @@
 
 </div>
 
-<div class="row">
+
+
+
   <div id="reg_form" class="col-md-6">
 
     <h2>Membership Sign Up!</h2>
@@ -52,7 +54,7 @@
     </p>
 
     <p>
-    <input type="submit" class="form-btn center-block" value="Submit" />
+    <input type="submit" class="form-btn right" value="Submit" />
     </p>
    <?php echo form_close(); ?>
   </div><!--<div class="reg_form">-->
